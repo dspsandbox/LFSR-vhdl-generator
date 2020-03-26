@@ -6,16 +6,16 @@ This project is based on a simple Python library and a Vhdl template for the gen
 * **LFSR interations / clk cycle** : number of feedback steps per clock cycles. Defines the number of available pseudorandom bits per clock cycle. Has to be less or equal than LFSR length.
 
 ### Implementation example
-Schematic for a single iteration on a 8 bit LFSR with tap list = [7, 6, 5, 4].
+Schematic for a single iteration on a 8 bit LFSR with tap list = [7, 5, 4, 3].
         
             ___   ___   ___   ___   ___   ___   ___
            |   | |   | |   | |   | |   | |   | |   | 
            v     v     v     v     v     v     v 
          |7|   |6|   |5|   |4|   |3|   |2|   |1|   |0| 
-          |     |     |     |            ___        ^
-          |     |     |     |___________|   |       |
-          |     |     |_________________|XOR|_______|
-          |     |_______________________|   |
+          |           |     |     |      ___        ^
+          |           |     |     |_____|   |       |
+          |           |     |___________|XOR|_______|
+          |           |_________________|   |
           |_____________________________|___|
 
 ### Python
@@ -25,7 +25,7 @@ import lfsr
 # Parameters
 lfsrLen=8
 lfsrIter=8
-tapList=[7,6,5,4]
+tapList=[7,5,4,3]
 templatePath="lfsr_template.vhd"
 outputPath="lfsr_output.vhd"
 
@@ -38,7 +38,7 @@ generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath)
 ```python
 lfsrLen=8
 lfsrIter=1
-tapList=[7,6,5,4]
+tapList=[7,5,4,3]
 ```
 ![](/Examples/8Bit_1Iter/simulation.PNG)
 
@@ -46,7 +46,7 @@ tapList=[7,6,5,4]
 ```python
 lfsrLen=8
 lfsrIter=8
-tapList=[7,6,5,4]
+tapList=[7,5,4,3]
 ```
 
 ![](/Examples/8Bit_8Iter/simulation.PNG)
