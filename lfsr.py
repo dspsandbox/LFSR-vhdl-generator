@@ -21,8 +21,7 @@ def generate_xorList(lfsrLen,lfsrIter,tapList):
         for j in range(1,lfsrLen):
             xorList[lfsrLen-j]=xorList[lfsrLen-j-1]
         xorList[0]=newEntryParsed
-
-
+        
     return xorList
 
 def generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath):
@@ -50,6 +49,7 @@ def generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath):
     f.write(txt.encode())
     f.close()
 
+    return
 
 
 
