@@ -1,4 +1,8 @@
-import copy
+#############################################
+# LFSR pseudorandom number generator
+#
+# Pau Gomez (c) pau.gomez@dspsandbox.org
+#############################################
 
 def generate_xorList(lfsrLen,lfsrIter,tapList):
     xorList=[]
