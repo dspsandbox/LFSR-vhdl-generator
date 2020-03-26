@@ -1,26 +1,11 @@
 --------------------------------------------------------------------------------
 -- LFSR pseudorandom number generator
+-- Pau Gomez (c) pau.gomez@dspsandbox.org
 --------------------------------------------------------------------------------
 -- SETTINGS
 --    * Length = 8
---    * Tap list = [7, 6, 5, 4]
+--    * Tap list = [7, 5, 4, 3]
 --    * Iterations / clk cycle = 8
--- 
---------------------------------------------------------------------------------
--- IMPLEMENTATION EXAMPLE
--- Schematic for a single iteration on a 8 bit LFSR with tap list = [7, 6, 5, 4].
---        
---            ___   ___   ___   ___   ___   ___   ___
---           |   | |   | |   | |   | |   | |   | |   | 
---               v     v     v     v     v     v     v 
---         |0|   |1|   |2|   |3|   |4|   |5|   |6|   |7| 
---          ^   ___ ________________|     |     |     |
---          |  |   |______________________|     |     |
---          |__|XOR|____________________________|     |
---             |___|__________________________________|
---
---
--- Pau Gomez (c) pau.gomez@dspsandbox.org
 --------------------------------------------------------------------------------
 
 
@@ -52,14 +37,14 @@ architecture Behavioural of lfsr is
                         sr <= seedIn;
                     else
                         if en='1' then
-sr(0) <= sr(0) xor sr(2) xor sr(4) xor sr(5) xor sr(7);
-sr(1) <= sr(0) xor sr(1) xor sr(3) xor sr(7);
-sr(2) <= sr(0) xor sr(1) xor sr(2) xor sr(4) xor sr(5) xor sr(6) xor sr(7);
-sr(3) <= sr(0) xor sr(1) xor sr(2) xor sr(3);
-sr(4) <= sr(1) xor sr(2) xor sr(3) xor sr(4);
-sr(5) <= sr(2) xor sr(3) xor sr(4) xor sr(5);
-sr(6) <= sr(3) xor sr(4) xor sr(5) xor sr(6);
-sr(7) <= sr(4) xor sr(5) xor sr(6) xor sr(7);
+sr(0) <= sr(2) xor sr(5) xor sr(6);
+sr(1) <= sr(3) xor sr(6) xor sr(7);
+sr(2) <= sr(0) xor sr(5) xor sr(6) xor sr(7);
+sr(3) <= sr(0) xor sr(1) xor sr(4) xor sr(5) xor sr(7);
+sr(4) <= sr(0) xor sr(1) xor sr(2) xor sr(4);
+sr(5) <= sr(1) xor sr(2) xor sr(3) xor sr(5);
+sr(6) <= sr(2) xor sr(3) xor sr(4) xor sr(6);
+sr(7) <= sr(3) xor sr(4) xor sr(5) xor sr(7);
 
                         end if;
                     end if;
