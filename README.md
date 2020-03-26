@@ -3,7 +3,7 @@ This project is based on a simple Python library and a Vhdl template for the gen
 
 * **LFSR length**: length in bits of the shift register
 * **Tap list**: indices of shift register entries for the linear-feedback. We use indices 0,1,2,3,4,... which differ [2], that uses 1,2,3,4,5... Please keep in mind to adapt the indices accordingly. 
-* **LFSR interations / clk cycle** : number of feedback steps per clock cycles. Defines the number of available pseudorandom bits per clock cycle.
+* **LFSR interations / clk cycle** : number of feedback steps per clock cycles. Defines the number of available pseudorandom bits per clock cycle. Has to be less or equal than LFSR length.
 
 ### Implementation example
 Schematic for a single iteration on a 8 bit LFSR with tap list = [7, 6, 5, 4].
