@@ -47,7 +47,7 @@ tapList=[7,6,5,4]
 lfsrLen=8
 lfsrIter=8
 tapList=[7,6,5,4]
-```python
+```
 
 ![](/Examples/8Bit_8Iter/simulation.PNG)
 
