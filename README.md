@@ -34,7 +34,7 @@ generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath)
 ```
 
 ### Examples 
-Idem LFSR register length and tap list but distinct iterations / clk cycle. The red area (see images bellow) highlights the equivalent shift registers.
+Idem LFSR register length and tap list but distinct iterations / clk cycle. Red area (see images bellow) highlight equal shift registers in both examples.
 
 * **Example (I):** */Examples/8Bit_1Iter/lfsr.vhd*
 ```python
