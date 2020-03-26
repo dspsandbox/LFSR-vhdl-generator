@@ -2,9 +2,9 @@
 -- LFSR pseudorandom number generator
 --------------------------------------------------------------------------------
 -- SETTINGS
---    * Length = <lfsrLen>
---    * Tap list = <tapList>
---    * Iterations / clk cycle = <lfsrIter>
+--    * Length = 8
+--    * Tap list = [7, 6, 5, 4]
+--    * Iterations / clk cycle = 8
 -- 
 --------------------------------------------------------------------------------
 -- IMPLEMENTATION EXAMPLE
@@ -29,8 +29,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity lfsr is
     Generic(
-        lfsrLen : integer: <lfsrLen>;
-        lfsrIter : integer: <lfsrIter>
+        lfsrLen : integer: 8;
+        lfsrIter : integer: 8
         );
     Port(
         clk : in std_logic;
@@ -52,7 +52,15 @@ architecture Behavioural of lfsr is
                         sr <= seedIn;
                     else
                         if en='1' then
-<xorList>
+sr(0) <= sr(0) xor sr(2) xor sr(4) xor sr(5) xor sr(7);
+sr(1) <= sr(0) xor sr(1) xor sr(3) xor sr(7);
+sr(2) <= sr(0) xor sr(1) xor sr(2) xor sr(4) xor sr(5) xor sr(6) xor sr(7);
+sr(3) <= sr(0) xor sr(1) xor sr(2) xor sr(3);
+sr(4) <= sr(1) xor sr(2) xor sr(3) xor sr(4);
+sr(5) <= sr(2) xor sr(3) xor sr(4) xor sr(5);
+sr(6) <= sr(3) xor sr(4) xor sr(5) xor sr(6);
+sr(7) <= sr(4) xor sr(5) xor sr(6) xor sr(7);
+
                         end if;
                     end if;
                 end if;
