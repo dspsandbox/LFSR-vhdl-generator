@@ -33,7 +33,23 @@ outputPath="lfsr_output.vhd"
 generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath)
 ```
 
-### VHDL
+### Examples
+* **Example (I):** */Examples/8Bit_1Iter/lfsr.vhd*
+```python
+lfsrLen=8
+lfsrIter=1
+tapList=[7,6,5,4]
+```
+![](/Examples/8Bit_1Iter/simulation.PNG)
+
+* **Example (II):** */Examples/8Bit_8Iter/lfsr.vhd*
+```python
+lfsrLen=8
+lfsrIter=8
+tapList=[7,6,5,4]
+```python
+
+![](/Examples/8Bit_8Iter/simulation.PNG)
 
 
 
