@@ -33,7 +33,9 @@ outputPath="lfsr_output.vhd"
 generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath)
 ```
 
-### Examples
+### Examples 
+Idem LFSR register length and tap list but distinct iterations / clk cycle.
+
 * **Example (I):** */Examples/8Bit_1Iter/lfsr.vhd*
 ```python
 lfsrLen=8
