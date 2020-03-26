@@ -26,7 +26,7 @@ def generate_xorList(lfsrLen,lfsrIter,tapList):
 
     return xorList
 
-def generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath="lfsr_template.vhd",outputPath="lfsr.vhd"):
+def generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath):
     xorList=generate_xorList(lfsrLen,lfsrIter,tapList)
    
 
@@ -58,5 +58,6 @@ if __name__ == "__main__":
     lfsrLen=8
     lfsrIter=8
     tapList=[7,6,5,4]
-    print(generate_xorList(lfsrLen,lfsrIter,tapList))
-    generate_vhdl(lfsrLen,lfsrIter,tapList)
+    templatePath="lfsr_template.vhd"
+    outputPath="lfsr_output.vhd"
+    generate_vhdl(lfsrLen,lfsrIter,tapList,templatePath,outputPath)
