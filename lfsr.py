@@ -1,6 +1,5 @@
 #############################################
 # LFSR pseudorandom number generator
-#
 # Pau Gomez (c) pau.gomez@dspsandbox.org
 #############################################
 
