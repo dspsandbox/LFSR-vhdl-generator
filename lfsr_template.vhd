@@ -29,8 +29,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity lfsr is
     Generic(
-        lfsrLen : integer: <lfsrLen>;
-        lfsrIter : integer: <lfsrIter>
+        lfsrLen : integer := <lfsrLen>;
+        lfsrIter : integer := <lfsrIter>
         );
     Port(
         clk : in std_logic;
@@ -43,11 +43,11 @@ entity lfsr is
 end lfsr;
 
 architecture Behavioural of lfsr is
-    signal sr : std_logic_vector ((lfsrLen-1) downto 0) := (others=>'0')
+    signal sr : std_logic_vector ((lfsrLen-1) downto 0) := (others=>'0');
     begin
         process(clk)
             begin
-                if rising_edge(clk):
+                if rising_edge(clk) then
                     if reset='1' then
                         sr <= seedIn;
                     else

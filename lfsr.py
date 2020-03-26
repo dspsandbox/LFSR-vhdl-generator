@@ -59,7 +59,7 @@ if __name__ == "__main__":
     tapList=[7,6,5,4]
     lfsrIter=1
     templatePath="lfsr_template.vhd"
-    outputPath="Examples/lfsr_8Bit_1Iter.vhd"
+    outputPath="Examples/8Bit_1Iter/lfsr.vhd"
     generate_vhdl(lfsrLen,tapList,lfsrIter,templatePath,outputPath)
 
     # Example (II)
@@ -67,5 +67,5 @@ if __name__ == "__main__":
     tapList=[7,6,5,4]
     lfsrIter=8
     templatePath="lfsr_template.vhd"
-    outputPath="Examples/lfsr_8Bit_8Iter.vhd"
+    outputPath="Examples/8Bit_8Iter/lfsr.vhd"
     generate_vhdl(lfsrLen,tapList,lfsrIter,templatePath,outputPath)
